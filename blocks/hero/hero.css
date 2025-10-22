@@ -151,7 +151,9 @@
   margin-right: auto;
   color: var(--text-light);
   text-align: center;
-  position:relative;
+  /* RUG 
+    position:relative;
+    */
   z-index: 1;
 }
 

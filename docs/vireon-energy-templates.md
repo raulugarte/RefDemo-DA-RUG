@@ -51,9 +51,9 @@ Header-Block, transparent über Modul 2 gelegt. Siehe "Referenzstruktur - Naviga
 ### Modul 5 - Text + Video
 | Columns | |
 |---|---|
-| ## 125 Jahre Erfahrung, neu ausgerichtet<br>Vom regionalen Versorger zum reinen Erneuerbaren-Unternehmen - in weniger als einer Generation.<br>[Unsere Strategie im Überblick](/strategie) | [Video-Embed-Link einfügen, z.B. YouTube/Vimeo-URL] |
+| ## 125 Jahre Erfahrung, neu ausgerichtet<br>Vom regionalen Versorger zum reinen Erneuerbaren-Unternehmen - in weniger als einer Generation.<br>[Unsere Strategie im Überblick](/strategie) | [YouTube-Link einfügen, z.B. https://youtu.be/xxxxxxxxxxx] |
 
-*Hinweis: ob das per `embed`-Block als Klick-Vorschau mit Play-Icon oder direkt als eingebetteter Player erscheint, hängt von `embed.js` ab - vorher prüfen.*
+*Korrigiert, per Code-Review geprüft: Das Video liegt in einer `Columns`-Zelle, nicht in einem eigenen `embed`-Block - dafür hat `columns.js` eine eigene, von `embed.js` unabhängige Video-Logik (`isVideoLink`/`loadVideoEmbed`). Wichtige Einschränkungen dieser Logik: **nur YouTube-Links oder direkte Videodateien** (`.mp4`/`.mov`/`.wmv`/`.avi`/`.mkv`/`.webm`) werden erkannt - **kein Vimeo, kein Twitter/X, kein generischer iframe** (die von `embed.js` unterstützt würden, hier aber nicht zur Anwendung kommen). Es gibt außerdem **keine Klick-Vorschau mit Play-Icon** über diesen Pfad - das Video wird sofort beim Laden der Section eingebettet (kein Platzhalterbild-/Lazy-Load-Mechanismus wie beim eigenständigen `embed`-Block). Autoplay ist über eine normale da.live-Tabelle nicht steuerbar (bräuchte ein `data-autoplay`-Attribut auf der Zelle) - Standard bleibt daher ein YouTube-Player mit normalen Bedienelementen, ohne Autoplay.
 
 ---
 

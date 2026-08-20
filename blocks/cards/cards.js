@@ -13,18 +13,26 @@ export default function decorate(block) {
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
-    const style = row.lastElementChild?.querySelector('p')?.textContent;
-    // const style = row.querySelector('p[data-aue-label="Style"]')?.textContent;
-    if (style) {
-      li.className = style;
-      row.lastElementChild?.remove();
+    // last cell is the dedicated variant slot - always drop it, whether or not it's filled
+    if (row.children.length > 1) {
+      const styleCell = row.lastElementChild;
+      const style = styleCell.querySelector('p')?.textContent;
+      if (style) li.className = style;
+      styleCell.remove();
     }
 
     moveInstrumentation(row, li);
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
-      else div.className = 'cards-card-body';
+      const hasPicture = div.querySelector('picture');
+      if (div.children.length === 1 && hasPicture) {
+        div.className = 'cards-card-image';
+      } else if (div.textContent.trim() || hasPicture) {
+        div.className = 'cards-card-body';
+      } else {
+        // empty placeholder cell (e.g. unused image column) - drop instead of rendering a blank box
+        div.remove();
+      }
     });
     ul.append(li);
   });

@@ -765,10 +765,22 @@ main .section.bg-light {
 main .section.text-center {
   text-align: center;
 }
+
 main .section.text-center > div {
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
+}
+
+main .section.split-feature {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+main .section.split-feature > div {
+  margin: 0;
 }
 
 

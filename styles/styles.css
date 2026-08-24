@@ -9,17 +9,15 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-/*
- :root {
-  --brand-theme-color: #ff0000;
-  --brand-dark-color: #131313;
-  --brand-light-color: #dcdcdc;
-  --brand-link-color: #131313;
-  --brand-link-hover-color: #ff0000;
-  --brand-text-color: #131313;
+:root {
+  --brand-theme-color: #1b7a70;
+  --brand-dark-color: #10242e;
+  --brand-light-color: #e7f0ec;
+  --brand-link-color: #10242e;
+  --brand-link-hover-color: #1b7a70;
+  --brand-text-color: #16222a;
   --brand-light-text-color: #ffffff;
 }
-*/
 
 :root {
   /* colors */

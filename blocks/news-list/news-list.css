@@ -1,0 +1,39 @@
+.news-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.news-list .news-list-item {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--light-color);
+}
+
+.news-list .news-list-item:last-child {
+  border-bottom: none;
+}
+
+.news-list .news-list-date {
+  flex: 0 0 auto;
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  white-space: nowrap;
+}
+
+.news-list .news-list-date p {
+  margin: 0;
+}
+
+.news-list .news-list-text {
+  flex: 1;
+}
+
+.news-list .news-list-text p {
+  margin: 0;
+}

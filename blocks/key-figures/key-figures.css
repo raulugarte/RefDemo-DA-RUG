@@ -1,0 +1,33 @@
+.key-figures {
+  background-color: var(--light-color);
+  padding: 24px;
+}
+
+.key-figures .key-figures-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.key-figures .key-figures-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.key-figures .key-figures-label {
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+}
+
+.key-figures .key-figures-value {
+  font-weight: 700;
+}
+
+.key-figures .key-figures-highlight .key-figures-value {
+  font-size: var(--heading-font-size-m);
+}

@@ -58,3 +58,29 @@ footer .footer a:hover {
     padding: 50px 32px;
   }
 }
+
+/* Footer link columns (Section Metadata: Style = footer-columns), holds 3x link-list blocks */
+footer .section.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+footer .section.footer-columns .link-list {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+footer .section.footer-columns .link-list-heading,
+footer .section.footer-columns .link-list-links a {
+  color: inherit;
+}
+
+@media (width < 900px) {
+  footer .section.footer-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

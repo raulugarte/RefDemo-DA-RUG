@@ -33,10 +33,11 @@ Vor allem anderen: bestätigen, dass das lokale Repo tatsächlich `raulugarte/re
 **teaser.css/teaser.js** - vorhanden, aber strukturell komplett anders als in früheren Notizen angenommen: kein "Bild + H2 + Text + Link"-Muster, und **keine `teaser-overlay`-Variante** - die gehört zu `cards.css` (dort korrekt als Karten-Variante gelistet), wurde hier fälschlich auch dem `teaser`-Block zugeschrieben. Stattdessen liest der Block ein festes Key/Value-Schema: `imageRef`/`imageAlt` (Bild-Modus) oder `videoReference`+`videoBehavior` (Video-Modus, wenn `teaserStyle = video`), ein einzelner `teaserBlurb`-Rich-Text-Block (wird als `<h1>` gerendert, kein separater Absatz), plus `btn-text`/`btn-style`/`btn-link` für den einen Button-Link (siehe `component-models.json`, Eintrag `id: teaser`). Layout ist fix: große kreisrunde "Swoosh"-Grafik (595x595px) neben Titel+Button, feste Blockhöhe 538px - keine Bild-links/Text-rechts-Bannervariante. **Für die Vireon-Templates aktuell nicht genutzt** - dort wird stattdessen `cards` (Varianten `teaser-overlay`/`image-top`) verwendet, siehe `vireon-energy-templates.md`.
 
 **Section Metadata** (in `styles/styles.css`, kein eigener Block-Ordner):
-- Feld `Style` → wird zu CSS-Klasse. Gültige Werte: `light`, `highlight`, `bg-default`, `bg-theme`, `bg-dark`, `bg-light` - plus zwei neu ergänzte Werte `text-center` und `split-feature` (siehe `vireon-energy-templates.md`, Abschnitt "Neue Blocks - Spezifikation", dort auch der genaue CSS-Code zum Einfügen).
-- Feld `Sec Spacing` → wird zu `data-sec-spacing`. Werte: `section-none`, `section-xtiny`, `section-tiny`, `section-xxsmall`, `section-xsmall`, `section-regular`, `section-small`, `section-medium`, `section-large`, `section-xlarge`, `section-huge`, `section-xhuge`
-- Feld `Sec Spacing Bottom` → analog, `data-sec-spacing-bottom`
-- Feld `Sec Full Width` → `data-sec-full-width`, Wert `true`
+- Feld `style` → wird zu CSS-Klasse. Gültige Werte: `light`, `highlight`, `bg-default`, `bg-theme`, `bg-dark`, `bg-light` - plus zwei neu ergänzte Werte `text-center` und `split-feature` (siehe `vireon-energy-templates.md`, Abschnitt "Neue Blocks - Spezifikation", dort auch der genaue CSS-Code zum Einfügen).
+- Feld `sec-spacing` → wird zu `data-sec-spacing`. Werte: `section-none`, `section-xtiny`, `section-tiny`, `section-xxsmall`, `section-xsmall`, `section-regular`, `section-small`, `section-medium`, `section-large`, `section-xlarge`, `section-huge`, `section-xhuge`
+- Feld `sec-spacing-bottom` → analog, `data-sec-spacing-bottom`
+- Feld `sec-full-width` → `data-sec-full-width`, Wert `true`
+- **Korrigiert:** Die Feldnamen sind klein geschrieben mit Bindestrich (`style`, `sec-spacing`, `sec-spacing-bottom`, `sec-full-width`), nicht groß mit Leerzeichen (`Style`, `Sec Spacing`, ...) - so schlägt sie da.lives Slash-Menü/Autovervollständigung im Editor vor. Für `readBlockConfig`/`toClassName` in `aem.js` ist das Ergebnis identisch (beide Schreibweisen erzeugen denselben Klassennamen) - die Korrektur betrifft nur die Autoren-Konvention, nicht die Funktion.
 - Autocomplete/Farb-Swatch-Vorschläge beim Eintippen dieser Werte in da.live funktionieren NICHT (getestet, kein Ergebnis) - rein kosmetisches Feature, hat keinen Einfluss auf die tatsächliche Funktion.
 
 **Drei neue Blocks für die volle Startseiten-Struktur** (noch nicht im Repo, Spezifikation in `vireon-energy-templates.md`): `link-list`, `news-list`, `key-figures`. Vor Beginn der Umsetzung dort die genaue Tabellenstruktur und das erwartete Rendering-Verhalten lesen.
@@ -138,20 +139,20 @@ Diese Struktur ist deutlich umfangreicher als die aktuell umgesetzten Vireon-Tem
 #### Startseite (`templates/vireon-startseite`)
 
 **Hero:** Bild (Windpark/Solarfeld) | Text: Eyebrow "Vireon Energy", H1 "Energie, die bleibt.", Absatz "Wir bauen die Infrastruktur für eine Versorgung, die nicht von fossilen Reserven abhängt - mit Wind, Sonne und Speichertechnologie, die heute schon trägt.", Link "Unsere Energiequellen entdecken" → `/energiequellen`
-Section Metadata: `Sec Full Width = true`
+Section Metadata: `sec-full-width = true`
 
 **Quote:** "Wir denken in Jahrzehnten, nicht in Quartalen. Jede Anlage, die wir heute bauen, versorgt noch die Generation nach uns." - Mara Lindqvist, CEO Vireon Energy
-Section Metadata: `Style = bg-light`, `Sec Spacing = section-large`
+Section Metadata: `style = bg-light`, `sec-spacing = section-large`
 
 **Cards, 4 Karten:** *(jede Kartenzeile 3 Spalten: Bild | Text | "image-top" - Kopfzeile bleibt reines "Cards", der Suffix wirkt nur über die 3. Spalte, siehe cards.css-Befund oben)*
 - Windenergie / "Onshore- und Offshore-Windparks in sieben Ländern, mit einer Gesamtleistung von über 4 Gigawatt."
 - Solarenergie / "Freiflächenanlagen und Dachsysteme - von der Einzelanlage bis zum industriellen Solarpark."
 - Batteriespeicher / "Großspeicher, die überschüssige Energie puffern und bei Bedarf ins Netz zurückspeisen."
 - Wasserstoff / "Grüner Wasserstoff für Industrieprozesse, die sich nicht direkt elektrifizieren lassen."
-Section Metadata: `Sec Spacing = section-xlarge`
+Section Metadata: `sec-spacing = section-xlarge`
 
 **Columns:** Bild (Landschaft) | H2 "Klimaneutral bis 2038", Text "Wir haben unseren Weg zur Klimaneutralität extern zertifizieren lassen. Das bedeutet: keine Kompensation durch Zertifikate, sondern echte Emissionsreduktion in jedem Geschäftsbereich.", Link "Unseren Fortschritt sehen" → `/nachhaltigkeit`
-Section Metadata: `Style = bg-dark`, `Sec Spacing = section-huge`
+Section Metadata: `style = bg-dark`, `sec-spacing = section-huge`
 
 **Teaser (teaser-overlay):** Bild (Team auf Anlage) | H2 "Bau mit uns die Energiewende", Text "Vireon Energy sucht Ingenieurinnen, Techniker und Projektleiter für Anlagen in ganz Europa.", Link "Offene Stellen ansehen" → `/karriere`
 
@@ -160,7 +161,7 @@ Section Metadata: `Style = bg-dark`, `Sec Spacing = section-huge`
 **Hero:** Bild (Firmenzentrale Bremen) | H1 "Über Vireon Energy", Text "Seit 1968 in der Energieversorgung - seit 2011 ausschließlich in erneuerbaren Quellen."
 
 **Columns:** Bild (Archiv/Zeitstrahl) | H2 "Von der Kohle zur Kilowattstunde aus Wind", Text "Vireon Energy wurde 1968 als regionaler Energieversorger in Bremen gegründet. 2011 fiel die Entscheidung, vollständig auf erneuerbare Quellen umzusteigen - ein Prozess, der 2019 abgeschlossen wurde."
-Section Metadata: `Style = bg-light`
+Section Metadata: `style = bg-light`
 
 **Cards, 3 Karten (Icons statt Bilder):** *(jede Kartenzeile 3 Spalten: Icon | Text | dritte Spalte leer lassen, Kopfzeile "Cards" - siehe cards.css-Befund oben)*
 - Verantwortung / "Wir bauen Anlagen, die 30 Jahre und länger laufen - und stehen für ihren Rückbau genauso ein wie für ihren Bau."
@@ -168,7 +169,7 @@ Section Metadata: `Style = bg-light`
 - Partnerschaft / "Wir bauen Anlagen gemeinsam mit den Gemeinden, in denen sie stehen - mit Beteiligungsmodellen für Anwohner."
 
 **Quote:** "Ich habe elf Jahre in der Kohleverstromung gearbeitet, bevor ich zu Vireon gewechselt bin. Der Unterschied ist, dass ich meinen Kindern jetzt erklären kann, was ich beruflich mache, ohne zu zögern." - Jonas Wetterling, Anlagentechniker, Windpark Nordsee
-Section Metadata: `Style = bg-dark`
+Section Metadata: `style = bg-dark`
 
 #### Nachhaltigkeit (`templates/vireon-nachhaltigkeit`)
 

@@ -23,7 +23,7 @@ Header-Block, transparent über Modul 2 gelegt. Siehe "Referenzstruktur - Naviga
 | [Bild: Windpark, Meer im Hintergrund] | **Vireon Energy**<br># Energie, die bleibt.<br>Wir investieren Milliarden in profitables Wachstum bei erneuerbaren Energien.<br>[Mehr erfahren](/energiequellen) |
 | [Bild: Wasserstoffanlage] | **Vireon Energy**<br># Wasserstoff für die Industrie von morgen<br>Grüner Wasserstoff dort, wo sich Prozesse nicht direkt elektrifizieren lassen.<br>[Zum Wasserstoff-Programm](/wasserstoff) |
 
-**Section Metadata:** `Sec Full Width = true`
+**Section Metadata:** `sec-full-width = true`
 
 *Hinweis: die transparente Nav-Überlagerung (siehe Modul 1) ist eine header.css-Anpassung, kein Bestandteil des Carousel-Blocks selbst.*
 
@@ -34,7 +34,7 @@ Header-Block, transparent über Modul 2 gelegt. Siehe "Referenzstruktur - Naviga
 |---|---|
 | **Spotlight**<br>Nur wenige Energieversorger erfüllen schon heute die verschärften EU-Klimaziele für 2030 - Vireon zählt dazu.<br>[Mehr zum Klimaschutz](/nachhaltigkeit) | [Bild: kleines Vorschaubild, Windpark] |
 
-**Section Metadata:** `Sec Spacing = section-small`, `Sec Spacing Bottom = section-small`
+**Section Metadata:** `sec-spacing = section-small`, `sec-spacing-bottom = section-small`
 
 ---
 
@@ -44,7 +44,7 @@ Header-Block, transparent über Modul 2 gelegt. Siehe "Referenzstruktur - Naviga
 | "Wir denken in Jahrzehnten, nicht in Quartalen. Jede Anlage, die wir heute bauen, versorgt noch die Generation nach uns." | |
 | Mara Lindqvist, CEO Vireon Energy | |
 
-**Section Metadata:** `Style = bg-light`, `Sec Spacing = section-large`
+**Section Metadata:** `style = bg-light`, `sec-spacing = section-large`
 
 ---
 
@@ -63,7 +63,7 @@ Kein Block, reiner Fließtext, zentriert per Section Metadata:
 > ## Energie für ein nachhaltiges Leben
 > Zuverlässige Versorgung von Millionen Haushalten - jeden Tag, mit klarem Kurs Richtung Klimaneutralität.
 
-**Section Metadata:** `Style = text-center` *(neue, einfache Klasse - `.section.text-center { text-align:center; }`, keine Blockänderung nötig, nur eine CSS-Zeile in `styles.css`)*
+**Section Metadata:** `style = text-center` *(neue, einfache Klasse - `.section.text-center { text-align:center; }`, keine Blockänderung nötig, nur eine CSS-Zeile in `styles.css`)*
 
 ---
 
@@ -85,7 +85,7 @@ Zwei Blocks in einer Section, per `split-feature`-Style nebeneinander gestellt:
 | Investoren | /investor-relations |
 | Presse | /presse |
 
-**Section Metadata (für die gemeinsame Section beider Blocks):** `Style = split-feature`
+**Section Metadata (für die gemeinsame Section beider Blocks):** `style = split-feature`
 
 ---
 
@@ -101,7 +101,7 @@ Zwei Blocks in einer Section, per `split-feature`-Style nebeneinander gestellt:
 
 *Hinweis: erste Zelle je Zeile bleibt leer (kein Bild) - vorher prüfen, ob `cards.js` das toleriert, siehe Notiz im Block-Abschnitt unten. Dritte Zelle ebenfalls leer lassen (siehe Hinweis ganz oben).*
 
-**Section Metadata:** `Sec Spacing = section-xlarge`
+**Section Metadata:** `sec-spacing = section-xlarge`
 
 ---
 
@@ -109,7 +109,7 @@ Zwei Blocks in einer Section, per `split-feature`-Style nebeneinander gestellt:
 > ## Unsere Expertise
 > Von der Erzeugung bis zum Handel - wir entwickeln die Technologien, die den Netzbetrieb von morgen tragen.
 
-**Section Metadata:** `Style = text-center`
+**Section Metadata:** `style = text-center`
 
 ---
 
@@ -120,7 +120,7 @@ Zwei Blocks in einer Section, per `split-feature`-Style nebeneinander gestellt:
 
 *Einzelne Kartenzeile (1 Karte, 3 Spalten - siehe Hinweis ganz oben), gleiche Begründung wie bei Modul 7.*
 
-**Section Metadata:** `Style = bg-dark`, `Sec Spacing = section-huge`
+**Section Metadata:** `style = bg-dark`, `sec-spacing = section-huge`
 
 ---
 
@@ -141,7 +141,7 @@ Zwei Blocks in einer Section, per `split-feature`-Style nebeneinander gestellt:
 >
 > **Deine Energie hat Wirkung. Nutze sie für Gutes.**
 
-**Section Metadata:** `Style = text-center`
+**Section Metadata:** `style = text-center`
 
 ---
 
@@ -160,7 +160,7 @@ Zwei Blocks nebeneinander, wieder per `split-feature`:
 | [Bild] | **Vireon als Arbeitgeber**<br>Benefits, Arbeitsweise, was dich erwartet.<br>[So ist es bei uns](/karriere/arbeitgeber) | image-top |
 | [Bild] | **#TeamVireon**<br>Stimmen aus dem Team, echte Einblicke.<br>[Geschichten entdecken](/karriere/team) | image-top |
 
-**Section Metadata:** `Style = split-feature`
+**Section Metadata:** `style = split-feature`
 
 ---
 
@@ -184,7 +184,7 @@ Zwei Blocks nebeneinander, per `split-feature`:
 
 *Wichtig: `Kurs`/`Veränderung` sind statische Platzhalterwerte, keine echten Live-Daten - für echte Kursdaten wäre ein externes Finanzdaten-Embed nötig, das ist bewusst nicht Teil dieser Spezifikation.*
 
-**Section Metadata:** `Style = split-feature`
+**Section Metadata:** `style = split-feature`
 
 ---
 
@@ -199,7 +199,7 @@ Zwei Blocks nebeneinander, per `split-feature`:
 
 *3 Spalten pro Kartenzeile, dritte leer lassen - siehe Hinweis ganz oben.*
 
-**Section Metadata:** `Style = text-center`
+**Section Metadata:** `style = text-center`
 
 ### Modul 16 - Footer (global, kein Template-Inhalt)
 Siehe "Referenzstruktur - Footer" oben im CLAUDE.md-Briefing (3 Linkspalten + Rechts-Fußzeile).
@@ -270,7 +270,7 @@ Setzt voraus, dass pro Section genau zwei Blocks (je ein direktes Kind-Div) enth
 **Section Metadata:**
 | Section Metadata | |
 |---|---|
-| Style | bg-light |
+| style | bg-light |
 
 ### Abschnitt 3 - Cards (Werte)
 | Cards | |
@@ -290,7 +290,7 @@ Setzt voraus, dass pro Section genau zwei Blocks (je ein direktes Kind-Div) enth
 **Section Metadata:**
 | Section Metadata | |
 |---|---|
-| Style | bg-dark |
+| style | bg-dark |
 
 ---
 

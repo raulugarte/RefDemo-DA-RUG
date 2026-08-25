@@ -437,20 +437,18 @@ button {
   text-decoration: none;
 }
 a::after, a.button::after {
-  font-family: 'Font Awesome 5 Solid';
-  content: "\f105";
-  color: var(--link-color);
-  font-size: 16px;
-  font-weight: 100;
-  width: 15px;
-  height: 20px;
-  float: right;
-  margin-left: 0;
-  margin-top: 0;
-  border: none;
-  border-radius: 0;
-  padding: 1px 10px;
-  cursor: pointer;
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 8px;
+  margin-bottom: 1px;
+  border-style: solid;
+  border-color: var(--link-color);
+  border-width: 0 2px 2px 0;
+  transform: rotate(-45deg);
+  vertical-align: middle;
+  transition: transform 0.2s, border-color 0.2s;
 }
 a:hover,
 a:focus,
@@ -464,7 +462,8 @@ a:hover::after,
 a:focus::after,
 a.button:hover::after,
 a.button:focus::after {
-  color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+  transform: rotate(-45deg) translate(2px, -2px);
 }
 
 button:disabled,
@@ -474,7 +473,7 @@ button:disabled:hover {
 }
 button:disabled::after,
 button:disabled:hover::after {
-  color: var(--text-disabled);
+  border-color: var(--text-disabled);
   cursor: unset;
 }
 

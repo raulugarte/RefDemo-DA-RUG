@@ -61,7 +61,7 @@ header nav a:any-link {
   color: currentcolor;
 }
 header nav a::after, header nav a:hover::after, header nav a.button::after {
-  content: '';
+  display: none;
 }
 
 
@@ -219,9 +219,7 @@ header nav .nav-sections ul > li > a:hover::before {
 }
 
 header nav .nav-sections ul > li > a::after {
-  content: '';
-  width: 0;
-  padding: 0;
+  display: none;
 }
 
 

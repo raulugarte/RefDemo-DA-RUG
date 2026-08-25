@@ -106,6 +106,12 @@
   display: inline-flex;
   flex: 1;
   flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cards > ul > li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 12%);
 }
 .cards > ul > li .cards-card-image {
   position: relative;
@@ -305,7 +311,7 @@
   color: var(--text-light);
 }
 .cards > ul > li.teaser-overlay .cards-card-body p.button-container a::after {
-  color: var(--text-light);
+  border-color: var(--text-light);
 }
 .cards > ul > li.teaser-overlay .cards-card-body h1 {
   margin: 0;
@@ -370,7 +376,7 @@
   color: var(--text-light);
 }
 .cards > ul > li.teaser-card .cards-card-body p.button-container a::after {
-  color: var(--text-light);
+  border-color: var(--text-light);
 }
 .cards > ul > li.teaser-card .cards-card-body h1 {
   margin: 0;

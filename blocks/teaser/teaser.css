@@ -133,7 +133,7 @@ html[lang="ru"] .teaser-wrapper .button-container > a {
 .teaser-wrapper .teaser-swoosh-wrapper a::after,
 .teaser-wrapper .teaser-swoosh-wrapper a.button::after,
 .teaser-wrapper .teaser-swoosh-wrapper button::after {
-    color: var(--text-light);
+    border-color: var(--text-light);
 }
 
 

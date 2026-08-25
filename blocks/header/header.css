@@ -2,10 +2,9 @@
 
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--dark-color-opacity);
+  background-color: transparent;
   width: 100%;
   z-index: 2;
-  position: fixed;
 }
 
 header nav {
@@ -81,7 +80,7 @@ header nav .nav-hamburger button {
   border-radius: 0;
   padding: 0;
   background-color: transparent;
-  color: var(--text-light);
+  color: var(--text-color);
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
@@ -189,9 +188,9 @@ header nav .nav-sections ul > li {
   font-weight: 500;
 }
 
-header nav .nav-sections ul > li > a {  
-  font-size: 18px;
-  color: #ffffff;
+header nav .nav-sections ul > li > a {
+  font-size: 15px;
+  color: var(--text-color);
   text-decoration: none;
   font-family: var(--body-font-family);
 }
@@ -279,7 +278,7 @@ header nav .nav-sections ul > li > ul > li {
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
     position: relative;
-    color: #ffffff;
+    color: var(--text-color);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
@@ -342,7 +341,7 @@ header nav .nav-tools .icon-search-light  {
   background-color: transparent;
   height: 30px;
   font-size: 18px;
-  color: #fff;
+  color: var(--text-color);
   font-weight: normal;
   padding-bottom: 10px;
 }
@@ -355,7 +354,7 @@ header nav .nav-tools .icon-search-light  {
 }
 
 #search-input::placeholder {
-  color: #fff;
+  color: var(--text-muted);
   font-weight: 400;
 }
 
@@ -435,7 +434,7 @@ html[dir="rtl"] .search-input-container input[type="search"]::-webkit-search-can
     padding: 8% 3%;
     text-align: center;
     z-index: 11111111;
-    background-color: var(--dark-color-opacity);
+    background-color: var(--background-color);
   }
 
   header nav .nav-sections ul {

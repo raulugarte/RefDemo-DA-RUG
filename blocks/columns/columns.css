@@ -37,6 +37,38 @@
   order: 0;
 }
 
+/* graceful placeholder for a column with no image/content yet */
+.columns > div > div:empty {
+  min-height: 150px;
+  border: 1.5px dashed var(--light-color);
+  border-radius: var(--border-radius-base);
+  color: var(--text-muted);
+}
+
+/* on a dark section, the CTA reads as a plain accent-colored text link instead of a filled pill */
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.bg-dark .columns a.button:any-link {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  color: var(--main-accent-color);
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: 600;
+}
+
+main .section.bg-dark .columns a.button:any-link::after {
+  display: inline-block;
+}
+
+main .section.bg-dark .columns a.button:any-link:hover,
+main .section.bg-dark .columns a.button:any-link:focus {
+  background-color: transparent;
+  text-decoration: underline;
+  transform: none;
+  box-shadow: none;
+}
+
 .columns video {
   display: block;
   width: 100%;

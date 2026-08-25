@@ -28,3 +28,60 @@
 .link-list .link-list-links a:focus-visible {
   text-decoration: underline;
 }
+
+/* audience row (Section Metadata: Style = audience) - grid of hover-invert tiles, e.g. "for whom is this relevant" */
+main .section.audience {
+  background-color: var(--light-color);
+}
+
+main .section.audience .link-list {
+  background: var(--rule-color-light);
+  color: var(--text-color);
+  border: 1px solid var(--rule-color-light);
+  border-radius: var(--border-radius-large);
+  padding: 0;
+  overflow: hidden;
+}
+
+main .section.audience .link-list-heading {
+  display: none;
+}
+
+main .section.audience .link-list-links {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+}
+
+main .section.audience .link-list-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 88px;
+  padding: 22px 16px;
+  background: var(--light-color);
+  color: var(--text-color);
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+main .section.audience .link-list-links a:hover,
+main .section.audience .link-list-links a:focus-visible {
+  background: var(--dark-color);
+  color: var(--main-accent-color);
+  text-decoration: none;
+}
+
+@media (width < 900px) {
+  main .section.audience .link-list-links {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width < 560px) {
+  main .section.audience .link-list-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

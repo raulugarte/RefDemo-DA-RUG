@@ -25,13 +25,9 @@ header nav {
   align-items: center;
   display: flex;
 
-  /* transparent over the hero until scrolled - see header.js is-scrolled toggle */
+  /* header background is dark in both states (transparent, then blurred-dark
+     on scroll - see header.js is-scrolled toggle), so nav text stays light */
   color: var(--text-light);
-  transition: color 0.25s ease;
-}
-
-header.is-scrolled nav {
-  color: var(--text-color);
 }
 
 header nav[aria-expanded='true'] {
@@ -301,7 +297,8 @@ header nav .nav-sections ul > li > ul > li {
     width: 200px;
     top: 150%;
     padding: 16px;
-    background-color: var(--light-color);
+    background-color: var(--dark-color);
+    border-radius: var(--border-radius-medium);
     white-space: initial;
   }
 
@@ -314,7 +311,7 @@ header nav .nav-sections ul > li > ul > li {
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    border-bottom: 8px solid var(--dark-color);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
@@ -442,7 +439,7 @@ html[dir="rtl"] .search-input-container input[type="search"]::-webkit-search-can
     padding: 8% 3%;
     text-align: center;
     z-index: 11111111;
-    background-color: var(--background-color);
+    background-color: var(--dark-color);
   }
 
   header nav .nav-sections ul {

@@ -1,7 +1,7 @@
 footer {
   background-color: var(--dark-color);
   font-size: var(--body-font-size-xs);
-  font-family: var(--light-font-family);
+  font-family: var(--body-font-family);
   width: 100%;
   z-index: 2;
   color: var(--text-light);
@@ -74,8 +74,12 @@ footer .section.footer-columns .link-list {
 }
 
 footer .section.footer-columns .link-list-heading {
-  font-size: 14px;
-  color: var(--text-light);
+  font-family: var(--mono-font-family);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-light-muted);
 }
 
 footer .section.footer-columns .link-list-links {
@@ -83,7 +87,7 @@ footer .section.footer-columns .link-list-links {
 }
 
 footer .section.footer-columns .link-list-links a {
-  color: var(--text-light-muted);
+  color: color-mix(in srgb, var(--text-light) 82%, transparent);
   font-size: 14px;
   line-height: 2;
 }

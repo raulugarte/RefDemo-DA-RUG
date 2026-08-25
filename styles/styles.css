@@ -10,17 +10,21 @@
  * governing permissions and limitations under the License.
  */
 :root {
-  --brand-theme-color: #1b7a70;
-  --brand-dark-color: #10242e;
-  --brand-dark-color-alt: #1a2e26;
-  --brand-light-color: #e7f0ec;
-  --brand-link-color: #10242e;
-  --brand-link-hover-color: #1b7a70;
-  --brand-text-color: #16222a;
-  --brand-light-text-color: #ffffff;
-  --brand-text-muted-color: #5b6b66;
-  --brand-light-text-muted-color: #c9d6d3;
-  --brand-rule-color: #22383f;
+  --brand-theme-color: #3ed87a;
+  --brand-accent-deep-color: #1e9e58;
+  --brand-accent-soft-color: #bff2d3;
+  --brand-background-color: #f3f5ee;
+  --brand-dark-color: #0a1f1c;
+  --brand-dark-color-alt: #123832;
+  --brand-light-color: #e8ecdf;
+  --brand-link-color: #0a1f1c;
+  --brand-link-hover-color: #1e9e58;
+  --brand-text-color: #0a1f1c;
+  --brand-light-text-color: #f3f5ee;
+  --brand-text-muted-color: #55625c;
+  --brand-light-text-muted-color: rgb(243 245 238 / 72%);
+  --brand-rule-color: rgb(243 245 238 / 14%);
+  --brand-rule-color-light: rgb(10 31 28 / 12%);
 }
 
 :root {
@@ -34,16 +38,20 @@
   --link-color: var(--brand-link-color, #131313);
   --link-hover-color: var(--brand-link-hover-color, #ffc719);
   --main-accent-color: var(--brand-theme-color, #ffc719);
+  --accent-deep-color: var(--brand-accent-deep-color, #b8860b);
+  --accent-soft-color: var(--brand-accent-soft-color, #f5deb3);
   --dark-color-alt: var(--brand-dark-color-alt, #1a2e26);
   --dark-color-opacity: rgba(0, 0, 0, 0.55);
   --light-color-opacity: rgba(255, 255, 255, 0.5);
   --text-muted: var(--brand-text-muted-color, #5b6b66);
   --text-light-muted: var(--brand-light-text-muted-color, #c9d6d3);
   --rule-color: var(--brand-rule-color, #22383f);
+  --rule-color-light: var(--brand-rule-color-light, rgb(0 0 0 / 12%));
 
   /* fonts */
-  --body-font-family: -apple-system, 'Segoe UI', system-ui, roboto, sans-serif;
-  --heading-font-family: -apple-system, 'Segoe UI', system-ui, roboto, sans-serif;
+  --body-font-family: 'IBM Plex Sans', -apple-system, 'Segoe UI', system-ui, roboto, sans-serif;
+  --heading-font-family: 'Space Grotesk', -apple-system, 'Segoe UI', system-ui, roboto, sans-serif;
+  --mono-font-family: 'IBM Plex Mono', 'SFMono-Regular', consolas, monospace;
   --light-font-family: 'Adobe Clean Light', roboto, roboto-fallback, sans-serif;
   --extra-font-family: 'Adobe Clean Extra Bold', roboto, roboto-fallback, sans-serif;
   --black-font-family: 'Adobe Clean Black', roboto, roboto-fallback, sans-serif;
@@ -66,7 +74,7 @@
   --border-radius-small: 0.125rem;
   --border-radius-base: 0.25rem;
   --border-radius-medium: 0.5rem;
-  --border-radius-large: 1rem;
+  --border-radius-large: 1.125rem;
   --border-radius-x-large: 2rem;
   --global-gutter: 1.5rem;
   --global-section-padding: 5rem;
@@ -167,7 +175,7 @@
     --border-radius-small: 0.125rem;
     --border-radius-base: 0.25rem;
     --border-radius-medium: 0.5rem;
-    --border-radius-large: 1rem;
+    --border-radius-large: 1.125rem;
     --border-radius-x-large: 2rem;
     --global-gutter: 1.5rem;
     --global-section-padding: 5rem;
@@ -245,7 +253,7 @@
     --border-radius-small: 0.125rem;
     --border-radius-base: 0.25rem;
     --border-radius-medium: 0.5rem;
-    --border-radius-large: 1rem;
+    --border-radius-large: 1.125rem;
     --border-radius-x-large: 2rem;
     --global-gutter: 1.5rem;
     --global-section-padding: 5rem;
@@ -316,7 +324,7 @@ body.appear {
 
 ::selection {
   background-color: var(--main-accent-color);
-  color: var(--text-light);
+  color: var(--dark-color);
 }
 
 :focus-visible {
@@ -352,9 +360,10 @@ header {
 }
 
 header.is-scrolled {
-  background-color: var(--background-color);
-  border-bottom-color: var(--light-color);
-  box-shadow: 0 2px 10px rgb(0 0 0 / 6%);
+  background-color: color-mix(in srgb, var(--dark-color) 92%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom-color: var(--rule-color);
 }
 
 header .header,
@@ -377,13 +386,15 @@ h6 {
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
   font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   scroll-margin: 40px;
 }
 
 h1 {
   font-size: var(--heading-font-size-xxl);
+  line-height: 1.05;
+  font-weight: 700;
 }
 
 h2 {
@@ -453,7 +464,7 @@ button {
   border: none;
   border-radius: 0;
   font-size: 16px;
-  font-family: var(--heading-font-family);
+  font-family: var(--body-font-family);
   line-height: 20px;
   font-weight: 500;
   text-align: left;
@@ -509,16 +520,18 @@ button:disabled:hover::after {
 a.button:any-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
+  gap: 10px;
+  padding: 13px 22px;
   margin: 4px 0;
   background-color: var(--main-accent-color);
-  color: var(--text-light);
+  color: var(--dark-color);
+  border: 1px solid transparent;
   border-radius: 999px;
-  font-weight: 700;
+  font-size: 14.5px;
+  font-weight: 600;
   white-space: nowrap;
-  box-shadow: 0 4px 14px rgb(0 0 0 / 15%);
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: none;
+  transition: background-color 0.18s ease, transform 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
 a.button:any-link::after {
@@ -527,36 +540,39 @@ a.button:any-link::after {
 
 a.button:any-link:hover,
 a.button:any-link:focus {
-  background-color: var(--link-hover-color);
-  color: var(--text-light);
+  background-color: var(--accent-soft-color);
+  color: var(--dark-color);
   text-decoration: none;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgb(0 0 0 / 22%);
+  transform: translateY(-1px);
+  box-shadow: none;
 }
 
 a.button.secondary:any-link,
 button.secondary {
   background-color: transparent;
   color: var(--text-color);
-  border: 2px solid currentcolor;
+  border: 1px solid var(--rule-color-light);
   box-shadow: none;
 }
 
 a.button.secondary:any-link:hover,
 a.button.secondary:any-link:focus {
-  background-color: var(--text-color);
-  color: var(--background-color);
+  background-color: transparent;
+  color: var(--accent-deep-color);
+  border-color: var(--accent-deep-color);
 }
 
 a.button.primary:any-link {
-  background-color: var(--dark-color);
+  background-color: transparent;
   color: var(--text-light);
+  border: 1px solid var(--rule-color);
 }
 
 a.button.primary:any-link:hover,
 a.button.primary:any-link:focus {
-  background-color: var(--text-color);
-  color: var(--background-color);
+  background-color: transparent;
+  color: var(--main-accent-color);
+  border-color: var(--main-accent-color);
 }
 
 main img {

@@ -7,13 +7,12 @@ export default function decorate(block) {
   const ul = document.createElement('ul');
   ul.className = 'key-figures-list';
 
-  [...block.children].forEach((row) => {
+  [...block.children].forEach((row, index) => {
     const [labelCell, valueCell] = [...row.children];
-    const label = labelCell.textContent.trim();
 
     const li = document.createElement('li');
     li.className = 'key-figures-item';
-    if (label.toLowerCase() === 'kurs') li.classList.add('key-figures-highlight');
+    if (index === 0) li.classList.add('key-figures-highlight');
 
     const dt = document.createElement('span');
     dt.className = 'key-figures-label';

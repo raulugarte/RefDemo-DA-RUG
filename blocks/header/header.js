@@ -240,4 +240,20 @@ export default async function decorate(block) {
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     navWrapper.append(await buildBreadcrumbs());
   }
+
+  // transparent header over the hero, solid once the page is scrolled
+  // note: styles.css turns body into its own scroll container (parallax
+  // effect) outside the editor, so window.scrollY stays 0 - check both
+  const headerEl = block.closest('header');
+  const updateScrolledState = () => {
+    const scrollTop = Math.max(
+      window.scrollY,
+      document.body.scrollTop,
+      document.documentElement.scrollTop,
+    );
+    headerEl.classList.toggle('is-scrolled', scrollTop > 10);
+  };
+  updateScrolledState();
+  window.addEventListener('scroll', updateScrolledState, { passive: true });
+  document.body.addEventListener('scroll', updateScrolledState, { passive: true });
 }
